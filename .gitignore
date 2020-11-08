@@ -1,0 +1,16 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# Sys
+.DS_STORE
+.idea
+
+# Node
+node_modules/
+
+# Build
+dist
+lib
+
