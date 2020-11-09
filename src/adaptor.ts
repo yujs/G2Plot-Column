@@ -2,11 +2,11 @@ import { Params, G2 } from '@antv/g2plot';
 import { ColumnOptions } from './types';
 
 let currentOptions: ColumnOptions;
+const defaultSymbolSize = [10, 10];
 
-G2.registerShape('interval', 'curve', {
+G2.registerShape('interval', 'custom', {
   // @ts-ignore
   getPoints(cfg) {
-    console.log(cfg);
     const x = cfg.x;
     const y = cfg.y;
     const y0 = cfg.y0;
@@ -21,14 +21,26 @@ G2.registerShape('interval', 'curve', {
   },
   // 2. 绘制
   draw(cfg, group) {
-    const points = this.parsePoints(cfg.points); // 将0-1空间的坐标转换为画布坐标
+    const { data } = cfg;
+    let { symbolSize = defaultSymbolSize, curvature } = currentOptions;
+    const symbolWidth = symbolSize[0];
+    const symbolHeight = symbolSize[1];
+    const points = this.parsePoints(cfg.points);
     const r = points[1].x - points[0].x;
-    let { curvature } = currentOptions;
     if (curvature > 1) {
       curvature = 1;
     }
-    console.log(currentOptions);
-    const polygon = group.addShape('path', {
+    group.addShape('image', {
+      attrs: {
+        x: points[1].x - symbolWidth / 2,
+        y: points[1].y - symbolHeight,
+        width: symbolWidth,
+        height: symbolHeight,
+        img: data['symbol'],
+      },
+      ...cfg.defaultStyle,
+    });
+    group.addShape('path', {
       attrs: {
         path: [
           ['M', points[0].x, points[0].y],
@@ -38,7 +50,7 @@ G2.registerShape('interval', 'curve', {
         ...cfg.defaultStyle,
       },
     });
-    return polygon;
+    return group;
   },
 });
 
@@ -47,8 +59,10 @@ G2.registerShape('interval', 'curve', {
  * @param options
  */
 export const defaultOptions = {
+  data: [],
   curvature: 0.2,
-  autoFit: true,
+  autoFit: false,
+  symbolSize: defaultSymbolSize,
 };
 
 /**
@@ -57,8 +71,8 @@ export const defaultOptions = {
  */
 export function adaptor(params: Params<ColumnOptions>): Params<ColumnOptions> {
   const { chart, options } = params;
+  const { data, xField, yField } = options;
   currentOptions = options;
-  const { data } = options;
   chart.data(data);
   chart.scale('sales', {
     nice: true,
@@ -66,7 +80,6 @@ export function adaptor(params: Params<ColumnOptions>): Params<ColumnOptions> {
   chart.tooltip({
     showMarkers: false,
   });
-  chart.interaction('active-region');
-  chart.interval().position('year*sales').shape('curve');
+  chart.interval().position(`${xField}*${yField}`).shape('custom');
   return params;
 }

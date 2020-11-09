@@ -1,23 +1,26 @@
 import { P } from '@antv/g2plot';
 import { defaultOptions, adaptor } from '../src';
+
 const data = [
-  { year: '1951 年', sales: 38 },
-  { year: '1952 年', sales: 52 },
-  { year: '1956 年', sales: 61 },
-  { year: '1957 年', sales: 145 },
-  { year: '1958 年', sales: 48 },
-  { year: '1959 年', sales: 38 },
-  { year: '1960 年', sales: 38 },
-  { year: '1962 年', sales: 38 },
+  { name: 'Internet Explorer',value: 26,symbol: 'https://gw.alipayobjects.com/zos/rmsportal/eOYRaLPOmkieVvjyjTzM.png'},
+  { name: 'Chrome', value: 40, symbol: 'https://gw.alipayobjects.com/zos/rmsportal/dWJWRLWfpOEbwCyxmZwu.png' },
+  { name: 'Firefox', value: 30, symbol: 'https://gw.alipayobjects.com/zos/rmsportal/ZEPeDluKmAoTioCABBTc.png' },
+  { name: 'Safari', value: 24, symbol: 'https://gw.alipayobjects.com/zos/rmsportal/eZYhlLzqWLAYwOHQAXmc.png' },
+  { name: 'Opera', value: 15, symbol: 'https://gw.alipayobjects.com/zos/rmsportal/vXiGOWCGZNKuVVpVYQAw.png' },
+  { name: 'Undetectable', value: 8, symbol: 'https://gw.alipayobjects.com/zos/rmsportal/NjApYXminrnhBgOXyuaK.png' },
 ];
 
 const column = new P(
   'app',
   {
     data,
+    xField: 'name',
+    yField: 'value',
+    height: 600,
+    curvature: 0.2,
     autoFit: true,
-    height: 500,
-    curvature: 1,
+    symbolSize: [40, 40],
+    //padding: 40, //发现顶部图标被挡住的时候 暂时可以设置一个padding解决
   },
   adaptor,
   defaultOptions,

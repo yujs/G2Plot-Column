@@ -3,8 +3,10 @@ const path = require('path');
 module.exports = {
     entry: './src/index.ts',
     output: {
+        library: 'G2Plot-Column',
+        libraryTarget: 'umd',
         path: path.resolve(__dirname, 'dist'),
-        filename: 'g2plot-column.min.js'
+        filename: 'g2plot-column.min.js',
     },
     resolve: {
         extensions: [".ts", ".js"],
