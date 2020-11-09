@@ -1,6 +1,6 @@
 {
   "name": "g2plot-column",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Custom g2plot column chart",
   "main": "lib/index.js",
   "license": "MIT",
