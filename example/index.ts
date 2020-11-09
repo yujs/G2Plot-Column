@@ -17,7 +17,7 @@ const column = new P(
     xField: 'name',
     yField: 'value',
     height: 600,
-    curvature: 0.2,
+    curvature: 0.8,
     autoFit: true,
     symbolSize: [40, 40],
     //padding: 40, //发现顶部图标被挡住的时候 暂时可以设置一个padding解决

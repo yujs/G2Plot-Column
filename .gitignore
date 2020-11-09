@@ -3,6 +3,7 @@ logs
 *.log
 npm-debug.log*
 
+
 # Sys
 .DS_STORE
 .idea
@@ -14,4 +15,7 @@ node_modules/
 dist
 lib
 esm
+
+asset
+package-lock.json
 
