@@ -1,6 +1,7 @@
 # G2Plot-Column
 
-> G2Plot-QRCode: plugin based on G2Plot v2. 
+> plugin based on G2Plot v2. 
+![Demo]](demo.png)
 
 ## Install
 
