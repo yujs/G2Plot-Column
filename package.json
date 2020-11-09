@@ -1,6 +1,6 @@
 {
   "name": "g2plot-column",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Custom g2plot column chart",
   "main": "lib/index.js",
   "license": "MIT",
@@ -33,6 +33,7 @@
     "@antv/g2plot": "^2.0.7"
   },
   "devDependencies": {
+    "@webpack-cli/serve": "^1.1.0",
     "html-webpack-plugin": "^4.5.0",
     "ts-loader": "^8.0.10",
     "typescript": "^4.0.5",

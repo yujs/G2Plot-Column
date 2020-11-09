@@ -62,7 +62,7 @@ G2.registerShape('interval', 'custom', {
  */
 export const defaultOptions = {
   data: [],
-  curvature: 0.2,
+  curvature: 0.8,
   autoFit: false,
   symbolSize: defaultSymbolSize,
 };

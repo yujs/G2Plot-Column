@@ -32,7 +32,7 @@ const column = new P(
     xField: 'name',// x轴字段
     yField: 'value',// y轴字段
     height: 600,
-    curvature: 0.2,//曲率，取值范围0—1，取0时是三角形
+    curvature: 0.8,//曲率，取值范围0—1，取0时是三角形
     autoFit: true,//自适应宽度
     symbolSize: [40, 40],// symbol图标尺寸[width,height]
     //padding: 40, //发现顶部图标被挡住的时候 暂时可以设置一个padding解决
