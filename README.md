@@ -1,7 +1,8 @@
 # G2Plot-Column
 
 > plugin based on G2Plot v2. 
-![Demo]](demo.png)
+
+![Demo]](/demo.png)
 
 ## Install
 
