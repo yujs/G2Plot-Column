@@ -2,7 +2,7 @@
 
 > plugin based on G2Plot v2. 
 
-![Demo]](/demo.png)
+<img src="./demo.png" />
 
 ## Install
 
