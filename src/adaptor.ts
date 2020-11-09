@@ -30,6 +30,8 @@ G2.registerShape('interval', 'custom', {
     if (curvature > 1) {
       curvature = 1;
     }
+    // 转换下
+    curvature = 1 - curvature;
     group.addShape('image', {
       attrs: {
         x: points[1].x - symbolWidth / 2,

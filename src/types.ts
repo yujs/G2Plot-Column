@@ -7,7 +7,7 @@ export interface ColumnOptions extends Options {
   readonly xField: string;
   /** y轴字段 */
   readonly yField: string;
-  /** 曲率 0-1 最大曲率为1时是三角形*/
+  /** 曲率 0-1 最小曲率为0时是三角形*/
   readonly curvature?: number;
   /** 顶部图片尺寸 [width,height] */
   readonly symbolSize?: number[];
