@@ -1,21 +1,3 @@
-# G2Plot-Column
-
-> plugin based on G2Plot v2. 
-
-<img src="./demo.png" />
-
-## Install
-
-```bash
-$ npm i --save g2plot-column
-```
-
-
-## Usage
-
- - render
-
-```ts
 import { P } from '@antv/g2plot';
 import { defaultOptions, adaptor } from '../src';
 
@@ -45,7 +27,3 @@ const column = new P(
 );
 
 column.render();
-
-```
-
-
