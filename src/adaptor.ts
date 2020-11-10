@@ -2,7 +2,7 @@ import { Params, G2 } from '@antv/g2plot';
 import { ColumnOptions } from './types';
 
 let currentOptions: ColumnOptions;
-const defaultSymbolSize = [10, 10];
+const defaultSymbolSize = [30, 30];
 
 G2.registerShape('interval', 'custom', {
   // @ts-ignore
@@ -35,7 +35,7 @@ G2.registerShape('interval', 'custom', {
     group.addShape('image', {
       attrs: {
         x: points[1].x - symbolWidth / 2,
-        y: points[1].y - symbolHeight,
+        y: points[1].y - symbolHeight - 5,//5是间隔高度
         width: symbolWidth,
         height: symbolHeight,
         img: data['symbol'],
