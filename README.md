@@ -33,6 +33,10 @@ const options = {
   curvature: 0.8,
   autoFit: true,
   symbolSize: [40, 40],
+  color:'red',
+  shapeAttrs:{
+      fill:'green',
+  }
   //padding: 40, //发现顶部图标被挡住的时候 暂时可以设置一个padding解决
 };
 const column = new P('app', options, adaptor, defaultOptions);
@@ -41,7 +45,7 @@ column.render();
 
 ## Attributes
 
-### Options
+### options
 
 | Name       | Type            | Description                                                                  |
 | ---------- | --------------- | ---------------------------------------------------------------------------- |
@@ -57,7 +61,7 @@ column.render();
 | color      | string          | shape common color/fill                                                      |
 | shapeAttrs | object          | shape common shape [attrs](https://g2.antv.vision/zh/docs/manual/shape-attrs) |
 
-### data
+### options.data
 
 | Name       | Type   | Description                                                                   |
 | ---------- | ------ | ----------------------------------------------------------------------------- |

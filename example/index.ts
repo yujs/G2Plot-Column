@@ -15,12 +15,12 @@ const data = [
     name: 'Undetectable',
     value: 8,
     symbol: 'https://gw.alipayobjects.com/zos/rmsportal/NjApYXminrnhBgOXyuaK.png',
-    shapeStyle: { fill: 'l(0) 0:#ffffff 0.5:#7ec2f3 1:#1890ff' },
+    shapeAttrs: { fill: 'l(0) 0:#ffffff 0.5:#7ec2f3 1:#1890ff' },
   },
 ];
 
 const column = new P(
-  'app',
+  'container',
   {
     data,
     xField: 'name',
@@ -31,7 +31,7 @@ const column = new P(
     symbolSize: [40, 40],
     padding: [50, 0, 0, 0], //发现顶部图标被挡住的时候 暂时可以设置一个padding解决
     color: 'red',
-    shapeStyle: {
+    shapeAttrs: {
       fill: 'green',
     },
   },
