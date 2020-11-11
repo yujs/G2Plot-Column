@@ -1,6 +1,6 @@
 # G2Plot-Column
 
-> Plugin based on G2Plot v2. 更多配置请参考[G2Plot 文档](https://g2plot.antv.vision/zh/examples/column/basic#basic)
+> Plugin based on G2Plot v2.[LIVE DEMO](https://yujs.github.io/G2Plot-Column/)
 
 <img src="asset/demo.png" />
 
@@ -41,6 +41,9 @@ const options = {
 };
 const column = new P('app', options, adaptor, defaultOptions);
 column.render();
+
+// column.update({data}); // update chart 
+
 ```
 
 ## Attributes
