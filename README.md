@@ -39,7 +39,7 @@ const column = new P('app', options, adaptor, defaultOptions);
 column.render();
 ```
 
-## API
+## Attributes
 
 ### Options
 
