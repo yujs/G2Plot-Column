@@ -1,4 +1,4 @@
-import { Options, Data } from '@antv/g2plot';
+import { Options, Data, ShapeStyle } from '@antv/g2plot';
 
 export interface ColumnOptions extends Options {
   /** 数据源 [{symbol:string}] 其中symbol是设置图标字段 */
@@ -11,4 +11,8 @@ export interface ColumnOptions extends Options {
   readonly curvature?: number;
   /** 顶部图片尺寸 [width,height] */
   readonly symbolSize?: number[];
+  /** shape样式 */
+  readonly shapeAttrs?: ShapeStyle;
+  /** 颜色 */
+  readonly color?: string;
 }

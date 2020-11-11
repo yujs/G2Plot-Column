@@ -1,9 +1,10 @@
 const path = require('path');
 
 module.exports = {
+    mode: 'production',
     entry: './src/index.ts',
     output: {
-        library: 'G2Plot-Column',
+        library: 'G2PlotColumn',
         libraryTarget: 'umd',
         path: path.resolve(__dirname, 'dist'),
         filename: 'g2plot-column.min.js',
@@ -19,5 +20,8 @@ module.exports = {
                 exclude: /node_modules/,
             },
         ],
-    }
+    },
+    externals: {
+        "@antv/g2plot": 'G2Plot'
+      }
 };

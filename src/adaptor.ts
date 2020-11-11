@@ -22,7 +22,12 @@ G2.registerShape('interval', 'custom', {
   // 2. 绘制
   draw(cfg, group) {
     const { data } = cfg;
-    let { symbolSize = defaultSymbolSize, curvature } = currentOptions;
+    let {
+      symbolSize = defaultSymbolSize,
+      curvature,
+      color: commonColor,
+      shapeAttrs: commonShapeAttrs,
+    } = currentOptions;
     const symbolWidth = symbolSize[0];
     const symbolHeight = symbolSize[1];
     const points = this.parsePoints(cfg.points);
@@ -35,21 +40,23 @@ G2.registerShape('interval', 'custom', {
     group.addShape('image', {
       attrs: {
         x: points[1].x - symbolWidth / 2,
-        y: points[1].y - symbolHeight - 5,//5是间隔高度
+        y: points[1].y - symbolHeight - 5, //5是间隔高度
         width: symbolWidth,
         height: symbolHeight,
         img: data['symbol'],
       },
-      ...cfg.defaultStyle,
     });
     group.addShape('path', {
       attrs: {
+        ...cfg.defaultStyle,
+        fill: data['color'] || commonColor,
+        ...commonShapeAttrs,
+        ...data['shapeAttrs'],
         path: [
           ['M', points[0].x, points[0].y],
           ['Q', points[1].x - r * curvature, points[0].y, points[1].x, points[1].y],
           ['Q', points[1].x + r * curvature, points[2].y, points[2].x, points[2].y],
         ],
-        ...cfg.defaultStyle,
       },
     });
     return group;
